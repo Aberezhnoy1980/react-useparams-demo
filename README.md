@@ -1,17 +1,47 @@
-# React + Vite
+# Демо-проект: React Router и независимые ключи данных
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Что мы сделали
 
-Currently, two official plugins are available:
+Мы создали демонстрационное React-приложение, которое наглядно показывает важную концепцию работы с данными в веб-приложениях:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🔑 **Основная идея:**
+**Ключи в URL, ключи в объекте данных и ID записей - это три независимые сущности!**
 
-## React Compiler
+### 📊 В нашем примере:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Товар | Ключ в URL | Ключ в объекте | ID товара |
+|-------|------------|----------------|-----------|
+| Телевизор | `super-tv` | `super-tv` | `1001` |
+| Смартфон | `mega-phone` | `mega-phone` | `1002` |
+| Планшет | `cool-tablet` | `cool-tablet` | `1003` |
+| Ноутбук | `old-laptop` | `old-laptop` | `999` |
 
-## Expanding the ESLint configuration
+### 🎯 **Что это доказывает:**
+1. **URL-ключи** (`:productKey`) могут быть человеко-читаемыми
+2. **Ключи в объекте-базе** могут не совпадать с ID записей  
+3. **ID товаров** могут быть любыми числами (или строками)
+4. Между этими тремя значениями **нет обязательной связи**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# react-useparams-demo
+### 🛠 **Техническая реализация:**
+- React Router v6 для маршрутизации
+- Хук `useParams()` для получения параметров из URL
+- Объект-имитация базы данных для демонстрации
+- Чистые React-компоненты
+
+### 🚀 **Запуск проекта:**
+```bash
+npm start
+```
+
+Приложение будет доступно по адресу: `http://localhost:3000`
+
+или [здесь]()
+
+---
+
+**Это демо отлично подходит для:** 
+- Обучения React Router
+- Понимания разницы между URL параметрами и данными
+- Демонстрации гибкости архитектуры веб-приложений
+
+Теперь можно легко выгружать на GitHub Pages! 🎉
